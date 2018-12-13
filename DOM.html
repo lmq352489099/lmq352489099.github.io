@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="html,JavaScript,">
+  <meta name="keywords" content="html,">
 
 
 
@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="前言 今天闲来无事，发现有这个调用摄像头的todo，网上查了一下，果然 js 有调用摄像头的 api，为此自己写一个 demo ，避免忘记。  正文 调用摄像头一共有两种实现方式，一种是使用navigator.getUserMedia（该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性），前面一种已经从 Web 标准中删除，仅为了">
-<meta name="keywords" content="html,JavaScript">
+<meta name="description" content="前言这在我们平常操作 DOM 的时候司空见惯。就比如：我通过获取一个元素来改变其样式，自然而然的反映到 HTML 页面中。 但是，我们操作 JS 对象的时候，本质上操作的是 JS 堆内存，为什么会反映到页面中呢？就是因为浏览器存在这个 DOM 的映射机制。 1. 什么是 DOM 的映射机制？我们使用 JS 从页面获取到的元素对象，或者自己手动创建的已经插入页面的元素对象，与页面中的 HTML 元素">
+<meta name="keywords" content="html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;font size=&quot;6&quot;&gt;调用摄像头&lt;&#x2F;font&gt;">
-<meta property="og:url" content="http://yoursite.com/123.html">
+<meta property="og:title" content="DOM的映射机制">
+<meta property="og:url" content="http://yoursite.com/DOM.html">
 <meta property="og:site_name" content="林敏强的博客">
-<meta property="og:description" content="前言 今天闲来无事，发现有这个调用摄像头的todo，网上查了一下，果然 js 有调用摄像头的 api，为此自己写一个 demo ，避免忘记。  正文 调用摄像头一共有两种实现方式，一种是使用navigator.getUserMedia（该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性），前面一种已经从 Web 标准中删除，仅为了">
+<meta property="og:description" content="前言这在我们平常操作 DOM 的时候司空见惯。就比如：我通过获取一个元素来改变其样式，自然而然的反映到 HTML 页面中。 但是，我们操作 JS 对象的时候，本质上操作的是 JS 堆内存，为什么会反映到页面中呢？就是因为浏览器存在这个 DOM 的映射机制。 1. 什么是 DOM 的映射机制？我们使用 JS 从页面获取到的元素对象，或者自己手动创建的已经插入页面的元素对象，与页面中的 HTML 元素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-13T09:01:27.812Z">
+<meta property="og:updated_time" content="2018-12-13T10:04:34.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;font size=&quot;6&quot;&gt;调用摄像头&lt;&#x2F;font&gt;">
-<meta name="twitter:description" content="前言 今天闲来无事，发现有这个调用摄像头的todo，网上查了一下，果然 js 有调用摄像头的 api，为此自己写一个 demo ，避免忘记。  正文 调用摄像头一共有两种实现方式，一种是使用navigator.getUserMedia（该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性），前面一种已经从 Web 标准中删除，仅为了">
+<meta name="twitter:title" content="DOM的映射机制">
+<meta name="twitter:description" content="前言这在我们平常操作 DOM 的时候司空见惯。就比如：我通过获取一个元素来改变其样式，自然而然的反映到 HTML 页面中。 但是，我们操作 JS 对象的时候，本质上操作的是 JS 堆内存，为什么会反映到页面中呢？就是因为浏览器存在这个 DOM 的映射机制。 1. 什么是 DOM 的映射机制？我们使用 JS 从页面获取到的元素对象，或者自己手动创建的已经插入页面的元素对象，与页面中的 HTML 元素">
 
 
 
@@ -153,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/123.html">
+  <link rel="canonical" href="http://yoursite.com/DOM.html">
 
 
 
 
 
-  <title><font size="6">调用摄像头</font> | 林敏强的博客</title>
+  <title>DOM的映射机制 | 林敏强的博客</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/123.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/DOM.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LMQ">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><font size="6">调用摄像头</font></h1>
+          <h1 class="post-title" itemprop="name headline">DOM的映射机制</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T11:35:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T09:35:11+08:00">
                 2018-05-10
               </time>
             
@@ -423,12 +423,32 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><blockquote>
-<p><strong>今天闲来无事，发现有这个调用摄像头的todo，网上查了一下，果然 js 有调用摄像头的 api，为此自己写一个 demo ，避免忘记。</strong></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p><strong>这在我们平常操作 DOM 的时候司空见惯。就比如：我通过获取一个元素来改变其样式，自然而然的反映到 HTML 页面中。</strong></p>
+<p><strong>但是，我们操作 JS 对象的时候，本质上操作的是 JS 堆内存，为什么会反映到页面中呢？就是因为浏览器存在这个 DOM 的映射机制。</strong></p>
+<h2 id="1-什么是-DOM-的映射机制？"><a href="#1-什么是-DOM-的映射机制？" class="headerlink" title="1. 什么是 DOM 的映射机制？"></a>1. 什么是 DOM 的映射机制？</h2><p><strong>我们使用 JS 从页面获取到的元素对象，或者自己手动创建的已经插入页面的元素对象，与页面中的 HTML 元素是绑定在一起的。也就是说修改其中一个，另一个也会跟着自动修改。这就是 DOM 的映射机制。</strong></p>
+<h2 id="2-形成映射的几种情形"><a href="#2-形成映射的几种情形" class="headerlink" title="2. 形成映射的几种情形"></a>2. 形成映射的几种情形</h2><h3 id="改变元素对象的属性"><a href="#改变元素对象的属性" class="headerlink" title="改变元素对象的属性"></a><strong>改变元素对象的属性</strong></h3><p><strong>这是我们最常用到的一种情形。当我们需要为元素添加自定义属性、或者修改属性等，就可以从页面中获取到元素对象，然后对其进行修改，就能够自动反映到 HTML 页面元素上。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt; 修改从页面中获取的元素样式</span></span><br><span class="line">Div.style.color = <span class="string">'red'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt; 修改已经插入页面的元素的属性</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">box.appendChild(p);</span><br><span class="line">p.dataset.index = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>这两种方式得到的元素对象，修改其属性，都能够直接反映到页面中，不需要再次插入页面中。</strong></p>
+<h2 id="在元素内部继续添加元素"><a href="#在元素内部继续添加元素" class="headerlink" title="在元素内部继续添加元素"></a>在元素内部继续添加元素</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt; 在其内部插入标签或文本</span></span><br><span class="line"><span class="keyword">var</span> list = Div.getElementsByTagName(<span class="string">'li'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(list); <span class="comment">// 空的元素集合</span></span><br><span class="line">Div.innerHTML(<span class="string">'&lt;li&gt;&lt;/li&gt;'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(list); <span class="comment">// 有一个元素集合</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt; 添加自己创建的元素对象，同样原理</span></span><br><span class="line">Div.appendChild(p);</span><br></pre></td></tr></table></figure>
+<p><strong>在容器中的数据绑定前，我们获取容器中元素，得到一个空的元素集合，容器数据绑定后，我们不需要重新获取，DOM 的映射机制会帮我们把新增加的元素映射到之前获取的空集合中，让其变为有元素的集合。</strong></p>
+<h2 id="在页面中追加已有元素"><a href="#在页面中追加已有元素" class="headerlink" title="在页面中追加已有元素"></a>在页面中追加已有元素</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list = Div.getElementsByTagName(<span class="string">'li'</span>)[<span class="number">0</span>];</span><br><span class="line">Div.appendChild(list);</span><br></pre></td></tr></table></figure>
+<p><code>appendChild</code> <strong>在追加元素对象的时候，如果这个元素在容器中已经存在，此时并不是克隆一份新的追加到末尾，而是把原有的元素移动到末尾。</strong></p>
+<blockquote>
+<p>其根本原因在于，同一个元素在页面中，只能够有一个位置。把 JS 元素对象插入页面中某个位置，实际上就是把其绑定的 HTML 元素移动到那个位置上。</p>
 </blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><br></p>
-<h3 id="调用摄像头"><a href="#调用摄像头" class="headerlink" title="调用摄像头"></a>调用摄像头</h3><p><strong>一共有两种实现方式，一种是使用<code>navigator.getUserMedia</code>（该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性），前面一种已经从 Web 标准中删除，仅为了向后兼容而存在，第二种是使用<code>navigator.mediaDevices.getUserMedia</code>(推荐使用),这两种方法 Safari 貌似都不支持。。。。</strong></p>
-<p>第二种<code>navigator.mediaDevices.getUserMedia</code>实现方法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;拍照<span class="number">2</span>&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button id=<span class="string">"take"</span>&gt;拍照&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;br /</span>&gt;</span><br><span class="line">    &lt;video id=<span class="string">"v"</span> style=<span class="string">"width: 640px;height: 480px;"</span>&gt;&lt;/video&gt;</span><br><span class="line">    &lt;canvas id=<span class="string">"canvas"</span> style=<span class="string">"display:none;"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">    &lt;br /&gt;</span><br><span class="line">    &lt;img src=<span class="string">"http://placehold.it/640&amp;text=Your%20image%20here%20..."</span> id=<span class="string">"photo"</span> alt=<span class="string">"photo"</span>&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        !(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 老的浏览器可能根本没有实现 mediaDevices，所以我们可以先设置一个空的对象</span></span><br><span class="line">            <span class="keyword">if</span> (navigator.mediaDevices === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                navigator.mediaDevices = &#123;&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (navigator.mediaDevices.getUserMedia === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                navigator.mediaDevices.getUserMedia = <span class="function"><span class="keyword">function</span> (<span class="params">constraints</span>) </span>&#123;</span><br><span class="line">                    <span class="comment">// 首先，如果有getUserMedia的话，就获得它</span></span><br><span class="line">                    <span class="keyword">var</span> getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;</span><br><span class="line">                    <span class="comment">// 一些浏览器根本没实现它 - 那么就返回一个error到promise的reject来保持一个统一的接口</span></span><br><span class="line">                    <span class="keyword">if</span> (!getUserMedia) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'getUserMedia is not implemented in this browser'</span>));</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 否则，为老的navigator.getUserMedia方法包裹一个Promise</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">                        getUserMedia.call(navigator, constraints, resolve, reject);</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">const</span> constraints = &#123;</span><br><span class="line">                video: <span class="literal">true</span>,</span><br><span class="line">                audio: <span class="literal">false</span></span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">let</span> videoPlaying = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">let</span> v = <span class="built_in">document</span>.getElementById(<span class="string">'v'</span>);</span><br><span class="line">            <span class="keyword">let</span> promise = navigator.mediaDevices.getUserMedia(constraints);</span><br><span class="line">            promise.then(<span class="function"><span class="params">stream</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="comment">// 旧的浏览器可能没有srcObject</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="string">"srcObject"</span> <span class="keyword">in</span> v) &#123;</span><br><span class="line">                    v.srcObject = stream;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 防止再新的浏览器里使用它，应为它已经不再支持了</span></span><br><span class="line">                    v.src = <span class="built_in">window</span>.URL.createObjectURL(stream);</span><br><span class="line">                &#125;</span><br><span class="line">                v.onloadedmetadata = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                    v.play();</span><br><span class="line">                    videoPlaying = <span class="literal">true</span>;</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.error(err.name + <span class="string">": "</span> + err.message);</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'take'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (videoPlaying) &#123;</span><br><span class="line">                    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</span><br><span class="line">                    canvas.width = v.videoWidth;</span><br><span class="line">                    canvas.height = v.videoHeight;</span><br><span class="line">                    canvas.getContext(<span class="string">'2d'</span>).drawImage(v, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">                    <span class="keyword">let</span> data = canvas.toDataURL(<span class="string">'image/webp'</span>);</span><br><span class="line">                    <span class="built_in">document</span>.getElementById(<span class="string">'photo'</span>).setAttribute(<span class="string">'src'</span>, data);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="literal">false</span>);</span><br><span class="line">        &#125;)();</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>这里的元素已经存在有两种情形：</strong></p>
+<ul>
+<li><strong>元素是从页面中获取到的</strong></li>
+<li><strong>创建的元素已经添加过一次，再次添加时</strong><br><strong>因此，就无需手动移除原先的元素，再进行添加。直接插入即可。</strong></li>
+</ul>
+<h2 id="3-特殊情况"><a href="#3-特殊情况" class="headerlink" title="3. 特殊情况"></a><strong>3. 特殊情况</strong></h2><p><strong><code>querySelectAll</code> 获取的集合是静态集合（staticNodeList），不存在上述所谓的映射机制，基于这个方法，数据绑定完成后需要重新获取一次才可以。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelectorAll(<span class="string">'#box'</span>);</span><br><span class="line"><span class="keyword">var</span> box1 = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(box); <span class="comment">//=&gt; 获取到的是 NodeList 对象</span></span><br><span class="line"><span class="built_in">console</span>.dir(box1); <span class="comment">//=&gt; 而这里获取到的是 HTMLElement 的实例</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>这个特殊的 NodeList 不存在与 HTML 页面元素的映射，而且没有很多 HTMLElement 实例才拥有的方法。因此，使用这个方法的时候每次操作时，都应该重新获取。</strong></p>
+<p><strong>另外，jQuery 中获取的元素同样不存在这些映射，实现映射需要使用其内部的方法，而且要使用原生 HTMLElement 实例的方法，需要通过后面加 <code>[0]</code> 的方法转换为原生元素对象。</strong></p>
+<p><strong>另外，由于存在这种映射机制，在使用循环 DOM 中，改变了 DOM 的顺序，那么循环原本的顺序也就改变了。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[].forEach.call(children, (item)=&gt; &#123;</span><br><span class="line">  parent.appendChild(item);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//=&gt; 这样做你会发现，循环完成后 children 改变了，不符合预期</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>因此，真实项目中，不应该过分依赖于 DOM 的映射机制。</strong></p>
+<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+<blockquote class="blockquote-center">生命的意义不仅是活着,而是我们给别人的生命带来了何种不同</blockquote>
+
 
       
     </div>
@@ -448,8 +468,6 @@
           
             <a href="/tags/html/" rel="tag"># html</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
         </div>
       
 
@@ -461,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/shexiangtou.html" rel="next" title="<font size=" 6"="">调用摄像头">
-                <i class="fa fa-chevron-left"></i> <font size="6">调用摄像头</font>
+              <a href="/lmq.html" rel="next" title="林敏强">
+                <i class="fa fa-chevron-left"></i> 林敏强
               </a>
             
           </div>
@@ -470,6 +488,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/shexiangtou.html" rel="prev" title="调用摄像头">
+                调用摄像头 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -608,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用摄像头"><span class="nav-number">2.1.</span> <span class="nav-text">调用摄像头</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是-DOM-的映射机制？"><span class="nav-number">2.</span> <span class="nav-text">1. 什么是 DOM 的映射机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-形成映射的几种情形"><span class="nav-number">3.</span> <span class="nav-text">2. 形成映射的几种情形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改变元素对象的属性"><span class="nav-number">3.1.</span> <span class="nav-text">改变元素对象的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在元素内部继续添加元素"><span class="nav-number">4.</span> <span class="nav-text">在元素内部继续添加元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在页面中追加已有元素"><span class="nav-number">5.</span> <span class="nav-text">在页面中追加已有元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-特殊情况"><span class="nav-number">6.</span> <span class="nav-text">3. 特殊情况</span></a></li></ol></div>
             
 
           </div>
@@ -667,7 +689,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count"> | 博客全站共2.6k字</span>
+  <span class="post-count"> | 博客全站共3.1k字</span>
 </div>
 
         
