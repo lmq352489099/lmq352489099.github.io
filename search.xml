@@ -35,17 +35,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[林敏强]]></title>
-    <url>%2Flmq.html</url>
-    <content type="text"><![CDATA[21佳科技发啦啊了圣诞节啊离开多久啊来得及三来得及阿里]]></content>
-      <categories>
-        <category>123</category>
-      </categories>
-      <tags>
-        <tag>123</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[像素与viewport的概念]]></title>
     <url>%2F%E5%83%8F%E7%B4%A0%E4%B8%8Eviewport%E7%9A%84%E6%A6%82%E5%BF%B5.html</url>
     <content type="text"><![CDATA[前言 学习移动端、响应式，首先必须明白的就是像素和viewport的概念，才能搞清楚出现各种情况的原因。 本文主要介绍物理像素、逻辑像素的概念以及他们之间的关系，viewport的由来以及设置。下面与大家分享。 一、像素的概念 px ：逻辑像素 ，浏览器使用的抽象单位 dp、pt：物理像素 dpr：设备像素缩放比 ppi：屏幕每英寸的像素数量，即单位英寸内的像素密度|ppi| 120| 160 |240| 320| :—-: | :—-: | :—-: ||dpr| 0.75| 1.0| 1.5| 2.0 ppi 越高，像素数越高，图像越清晰。Retina屏即高清屏，dpr 大于等于 2。 二、viewport web初期，网页渲染在手机上，会只显示页面的其中一部分。用户需要通过滑动屏幕才能查看网页的全貌。由于用户体验太差，于是浏览器商就引入了 viewport 的概念。 2.1 手机浏览器的默认行为 **- 页面默认先渲染在一个980px（ios）或其他的 viewport 里面 通过缩放，让用户能看到网页的全貌** 为什么渲染时，要加入 viewport ？直接渲染在小屏幕会导致排版布局等的混乱 2.2 viewport 的概念两个 viewport ：视口（visual） viewport 和布局（layout） viewport ** 视口 viewport 就是用户查看网页的视口（可以理解为屏幕），可以通过缩放来改变其大小 布局 viewport 就是网页渲染的一个底层页面，ios 默认 viewport 为980 px 指的就是布局 viewport 通过调用document.body.clientWidth查看默认布局Viewportwindow.innerWidth查看度量Viewport** 2.3 不使用默认布局 viewport 的原因 不同设备的默认值不同，宽度不可控制 缩放后连接可能因为太小不能准确触控，又有滚动，交互差 font-size:40px=PC的12px，不规范 2.4 设置 viewport在 html 中使用元标签meta设置 viewport： 1&lt;meta name='viewport' content='width=device-width,initial-scale=1,user-scalabel=no'&gt; 相关参数 width：设置布局viewport的值 initial-scale：设置页面的初始缩放 minimum-scale：最少缩放 maximum-scale：最大缩放 user-scalable：用户能否缩放 最佳设置 使视口 viewport = 设备宽度 = 布局 viewport width = device-width，让布局 viewport 等于设备宽度，也就是说，设置 320px 的元素会铺满 iphone5的屏幕宽度。 initial-scale =1，设置初始缩放比为1，使得缩放比因为网页的大小而改变，让视口 viewport = 布局viewport user-scalable = no，使得视口 viewport = 布局 viewport 保持不变]]></content>
@@ -54,6 +43,17 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[如果这个城市夜晚没有风]]></title>
+    <url>%2Flmq.html</url>
+    <content type="text"><![CDATA[这座城市人很多，每天在路上都能看到好多拉着行李箱的人，不管他们是来到这座城市还是离开这座城市，至少他们都曾努力过 在我想做博客之前，一直到我开始着手做这个博客，其实花了好久时间。而在我着手开始做这个博客，到这个博客完成，其实并没有花多久。也说明了一个道理，就是一定要勇于尝试，关键是要动手。我想起了老师的一句话，一个新鲜的事物，你一定要先去用它，应用驱动学习。 究其原因：第一个，我觉得是自己考虑的太多，没有太大的把握就不会轻易的去尝试，所以我在着手做这个之前花了很多的时间去查，域名空间这些的，而且这些出售这些的服务商也挺多的，我这个人有选择恐惧症。也是怪尴尬的，每次看到一个东西有好多选择的时候，我都去比较，去分析，头痛。。而且我想，域名空间搞好以后，还要自己写页面这些的。关键是还要设计博客风格，页面样式这些的，一想到这些，就感觉是一个不小的工程啊，后来才发现我多虑了。 后来，无意中看到了 Hexo 的 Next 主题的一篇博客，风格样式挺不错的，感谢 Hexo 和 Next 的文档写的如此的棒，以至于每一个人都能根据教程搭建一个自己的博客。这一切是如此的美好]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
