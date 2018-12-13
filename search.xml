@@ -12,6 +12,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[调用摄像头]]></title>
+    <url>%2F%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4.html</url>
+    <content type="text"><![CDATA[前言 今天闲来无事，发现有这个调用摄像头的todo，网上查了一下，果然 js 有调用摄像头的 api，为此自己写一个 demo ，避免忘记。 ##正文 ###调用摄像头一共有两种实现方式，一种是使用navigator.getUserMedia（该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性），前面一种已经从 Web 标准中删除，仅为了向后兼容而存在，第二种是使用navigator.mediaDevices.getUserMedia(推荐使用),这两种方法 Safari 貌似都不支持。。。。 第二种navigator.mediaDevices.getUserMedia实现方法:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;拍照2&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;button id="take"&gt;拍照&lt;/button&gt; &lt;br /&gt; &lt;video id="v" style="width: 640px;height: 480px;"&gt;&lt;/video&gt; &lt;canvas id="canvas" style="display:none;"&gt;&lt;/canvas&gt; &lt;br /&gt; &lt;img src="http://placehold.it/640&amp;text=Your%20image%20here%20..." id="photo" alt="photo"&gt; &lt;script&gt; !(function () &#123; // 老的浏览器可能根本没有实现 mediaDevices，所以我们可以先设置一个空的对象 if (navigator.mediaDevices === undefined) &#123; navigator.mediaDevices = &#123;&#125;; &#125; if (navigator.mediaDevices.getUserMedia === undefined) &#123; navigator.mediaDevices.getUserMedia = function (constraints) &#123; // 首先，如果有getUserMedia的话，就获得它 var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia; // 一些浏览器根本没实现它 - 那么就返回一个error到promise的reject来保持一个统一的接口 if (!getUserMedia) &#123; return Promise.reject(new Error('getUserMedia is not implemented in this browser')); &#125; // 否则，为老的navigator.getUserMedia方法包裹一个Promise return new Promise(function (resolve, reject) &#123; getUserMedia.call(navigator, constraints, resolve, reject); &#125;); &#125; &#125; const constraints = &#123; video: true, audio: false &#125;; let videoPlaying = false; let v = document.getElementById('v'); let promise = navigator.mediaDevices.getUserMedia(constraints); promise.then(stream =&gt; &#123; // 旧的浏览器可能没有srcObject if ("srcObject" in v) &#123; v.srcObject = stream; &#125; else &#123; // 防止再新的浏览器里使用它，应为它已经不再支持了 v.src = window.URL.createObjectURL(stream); &#125; v.onloadedmetadata = function (e) &#123; v.play(); videoPlaying = true; &#125;; &#125;).catch(err =&gt; &#123; console.error(err.name + ": " + err.message); &#125;) document.getElementById('take').addEventListener('click', function () &#123; if (videoPlaying) &#123; let canvas = document.getElementById('canvas'); canvas.width = v.videoWidth; canvas.height = v.videoHeight; canvas.getContext('2d').drawImage(v, 0, 0); let data = canvas.toDataURL('image/webp'); document.getElementById('photo').setAttribute('src', data); &#125; &#125;, false); &#125;)(); &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>前端技术</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[林敏强]]></title>
     <url>%2Flmq.html</url>
     <content type="text"><![CDATA[21佳科技发啦啊了圣诞节啊离开多久啊来得及三来得及阿里]]></content>
