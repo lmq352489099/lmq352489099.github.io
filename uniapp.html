@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="林敏强的博客">
 <meta property="og:description" content="前言    uni-app是hbuilder公司开发的新产品，实现使用vue的语法开发的代码，可以编译到H5、小程序、APP等多端，但是坑也很多，请大家避免。  Uni-app那些坑[1]软件的坑 1.运行的时候动不动要重启2.修改代码后不要等自动编译，尤其是小程序和app，先点击停止，再重新运行，实在不行重启小程序开发者工具 [2]代码的坑 一.模板中的坑 说明使用vue模板开发的坑  1. v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T16:55:51.338Z">
+<meta property="og:updated_time" content="2019-03-14T16:57:31.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Uni-app的那些坑">
 <meta name="twitter:description" content="前言    uni-app是hbuilder公司开发的新产品，实现使用vue的语法开发的代码，可以编译到H5、小程序、APP等多端，但是坑也很多，请大家避免。  Uni-app那些坑[1]软件的坑 1.运行的时候动不动要重启2.修改代码后不要等自动编译，尤其是小程序和app，先点击停止，再重新运行，实在不行重启小程序开发者工具 [2]代码的坑 一.模板中的坑 说明使用vue模板开发的坑  1. v">
@@ -438,14 +438,15 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">错误案例</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-for</span>=<span class="string">"index in 6"</span> <span class="attr">:key</span>=<span class="string">" index"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">正确案例，避免使用index</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-for</span>=<span class="string">"i in 6"</span> <span class="attr">:key</span>=<span class="string">"i"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>:key不能拼接字符串，否则原生(小程序)编译无法通过</p>
+<li>:key不能拼接字符串，否则原生(小程序)编译无法通过</li>
+</ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">错误案例</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-for</span>=<span class="string">"i in 6"</span> <span class="attr">:key</span>=<span class="string">" 'item'+i"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">正确案例，避免使用拼接</span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">v-for</span>=<span class="string">"i in 6"</span> <span class="attr">:key</span>=<span class="string">"i"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>v-for 禁止循环数字，如果有需要,请封装对象循环</p>
+<ul>
+<li>v-for 禁止循环数字，如果有需要,请封装对象循环</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小程序、APP、 H5循环无法保持统- -, H5从<span class="number">1</span>开始循环, 小程序和APP从开始循环，太坑了，需要把循环主体改成对象去循环</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>组件如果使用了slot,那调用的时候slot不能使用v-for ,仅H5支持，其他均不支持</strong><br>####2. 不支持部分复杂的 JavaScript 渲染表达式和过滤器<br><strong>目前可以使用的有 <code>+ - * % ?: ! == === &gt; &lt; [] .</code>，剩下的还待完善。</strong><br><strong>在数据遍历回来的时候提前用<code>computed</code>计算属性</strong></p>
-</li>
+<ul>
+<li><strong>组件如果使用了slot,那调用的时候slot不能使用v-for ,仅H5支持，其他均不支持</strong><br>####2. 不支持部分复杂的 JavaScript 渲染表达式和过滤器<br><strong>目前可以使用的有 <code>+ - * % ?: ! == === &gt; &lt; [] .</code>，剩下的还待完善。</strong><br><strong>在数据遍历回来的时候提前用<code>computed</code>计算属性</strong></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这种就不支持，建议写 computed --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; message.split('').reverse().join('') &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 但写在 @event 里面的表达式是都支持的，因为这部分的计算放在了 vdom 里面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">view</span> @<span class="attr">click</span>=<span class="string">"clickHandle(item, index, $event)"</span>&gt;</span>&#123;&#123; item.value &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="二、JS中的坑"><a href="#二、JS中的坑" class="headerlink" title="二、JS中的坑"></a>二、JS中的坑</h3><p><strong>1.组件不能使用onReady、onLoad等方法，请使用vue的mounted和created</strong></p>
