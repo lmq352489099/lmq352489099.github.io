@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Uni-app的那些坑]]></title>
+    <url>%2Funiapp.html</url>
+    <content type="text"><![CDATA[前言 uni-app是hbuilder公司开发的新产品，实现使用vue的语法开发的代码，可以编译到H5、小程序、APP等多端，但是坑也很多，请大家避免。 Uni-app那些坑[1]软件的坑 1.运行的时候动不动要重启2.修改代码后不要等自动编译，尤其是小程序和app，先点击停止，再重新运行，实在不行重启小程序开发者工具 [2]代码的坑 一.模板中的坑 说明使用vue模板开发的坑 1. v-for坑多 关键字不能使用index,否则无法编译通过 123456错误案例&lt;view v-for="index in 6" :key=" index"&gt;&lt;/view&gt;正确案例，避免使用index&lt;view v-for="i in 6" :key="i"&gt;&lt;/view&gt; :key不能拼接字符串，否则原生(小程序)编译无法通过 123456错误案例&lt;view v-for="i in 6" :key=" 'item'+i"&gt;&lt;/view&gt;正确案例，避免使用拼接&lt;view v-for="i in 6" :key="i"&gt;&lt;/view&gt; v-for 禁止循环数字，如果有需要,请封装对象循环 1小程序、APP、 H5循环无法保持统- -, H5从1开始循环, 小程序和APP从开始循环，太坑了，需要把循环主体改成对象去循环 组件如果使用了slot,那调用的时候slot不能使用v-for ,仅H5支持，其他均不支持####2. 不支持部分复杂的 JavaScript 渲染表达式和过滤器目前可以使用的有 + - * % ?: ! == === &gt; &lt; [] .，剩下的还待完善。在数据遍历回来的时候提前用computed计算属性 123456789&lt;!-- 这种就不支持，建议写 computed --&gt;&lt;view&gt;&#123;&#123; message.split('').reverse().join('') &#125;&#125;&lt;/view&gt;&lt;!-- 但写在 @event 里面的表达式是都支持的，因为这部分的计算放在了 vdom 里面 --&gt;&lt;view&gt; &lt;view v-for="(item, index) in list" :key="index"&gt; &lt;view @click="clickHandle(item, index, $event)"&gt;&#123;&#123; item.value &#125;&#125;&lt;/view&gt; &lt;/view&gt;&lt;/view&gt; 二、JS中的坑1.组件不能使用onReady、onLoad等方法，请使用vue的mounted和created 三、css中 的坑在APP.vue中page 可以设置全局页面的样式,如果想在当个页面覆盖的话,直接另起一个style 加入page便可覆盖]]></content>
+      <categories>
+        <category>前端技术</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>混合开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS堆栈内存]]></title>
     <url>%2Fjs%E5%A0%86%E6%A0%88%E5%86%85%E5%AD%98.html</url>
     <content type="text"><![CDATA[堆栈内存的作用JS 中的内存堆内存和栈内存，所有堆栈内存的处理，浏览器会自行在内部执行 栈内存： 提供一个供 JS 代码自上而下执行的环境（作用域，代码都是在栈内存中执行的） 由于基本类型比较简单，它们都是直接在栈内存中开辟一个位置，直接把值存储进去的 堆内存：引用值对应的空间存储引用类型的（对象：键值对，函数：代码字符串） 堆内存的释放让所有引用堆内存空间地址的变量赋值为 null 即可，当堆内存没有被任何的变量或者其他东西引用时，就会在浏览器执行垃圾回收的时候，被销毁掉。 堆内存释放后，里面存储的值也就会被释放掉。 栈内存的释放全局作用域会在页面关闭或者刷新的时候释放。（栈内存释放后，存储在栈内存中的值也都会销毁。）私有作用域：一般情况下，当函数执行完成，所形成的私有作用域（栈内存）都会自动释放掉，但是也有特殊的情况。 函数执行完成，当前形成的栈内存中，某些内容被栈内存意外的变量一直占用，此时栈内存不能释放，栈内存中存储的基本值也不会被释放，一直保存下来。最典型的就是闭包。 123456789101112var i = 1;function fn(i) &#123; return function(n) &#123; console.log(n + (++i)); &#125;&#125;var f = fn(2); //=&gt; i = 2f() //=&gt; i = 3f(3); //=&gt;7, i = 3 n =3，执行 n + (++i) =&gt; 3 + 4 = 7fn(5)(6); //=&gt;12, i = 5 n = 6，执行 n + (++i) =&gt; 6 + 6 = 12fn(7)(8); //=&gt;16, i = 7 n = 8，执行 n + (++i) =&gt; 8 + 8 = 16f(4); //=&gt;8, i = 3 n = 4，执行 n + (++i) =&gt; 4 + 4 = 8]]></content>
