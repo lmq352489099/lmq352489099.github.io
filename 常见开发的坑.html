@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,混合开发,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言    最近都在开发混合APP的页面，有些一些看似简单的东西一旦动手做起来总是会出现许多各式各样的问题，所以把这些问题记录下来，自己没事翻一翻，或者有个思路去解决。  一、 label 标签模拟单选、复选框在uniapp中或者H5中,按钮的样式都是有限的,为了让按钮看起来更美观，提升用户体验，就不用 input 标签的单选、复选按钮，而是用 label 标签结合 for 属性来模拟。具体代码如">
+<meta name="keywords" content="html,混合开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近开发项目的总结">
+<meta property="og:url" content="http://yoursite.com/常见开发的坑.html">
+<meta property="og:site_name" content="林敏强的博客">
+<meta property="og:description" content="前言    最近都在开发混合APP的页面，有些一些看似简单的东西一旦动手做起来总是会出现许多各式各样的问题，所以把这些问题记录下来，自己没事翻一翻，或者有个思路去解决。  一、 label 标签模拟单选、复选框在uniapp中或者H5中,按钮的样式都是有限的,为了让按钮看起来更美观，提升用户体验，就不用 input 标签的单选、复选按钮，而是用 label 标签结合 for 属性来模拟。具体代码如">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1060535/201811/1060535-20181124095517830-1894523015.png">
+<meta property="og:updated_time" content="2019-09-19T18:52:54.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最近开发项目的总结">
+<meta name="twitter:description" content="前言    最近都在开发混合APP的页面，有些一些看似简单的东西一旦动手做起来总是会出现许多各式各样的问题，所以把这些问题记录下来，自己没事翻一翻，或者有个思路去解决。  一、 label 标签模拟单选、复选框在uniapp中或者H5中,按钮的样式都是有限的,为了让按钮看起来更美观，提升用户体验，就不用 input 标签的单选、复选按钮，而是用 label 标签结合 for 属性来模拟。具体代码如">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1060535/201811/1060535-20181124095517830-1894523015.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/常见开发的坑.html">
+
+
+
+
+
+  <title>最近开发项目的总结 | 林敏强的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">林敏强的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">study hard, play hard.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/常见开发的坑.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LMQ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/daima.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林敏强的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">最近开发项目的总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-20T01:12:11+08:00">
+                2019-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端技术/" itemprop="url" rel="index">
+                    <span itemprop="name">前端技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p><br>  </p>
+<blockquote>
+<p><strong>最近都在开发混合APP的页面，有些一些看似简单的东西一旦动手做起来总是会出现许多各式各样的问题，所以把这些问题记录下来，自己没事翻一翻，或者有个思路去解决。</strong></p>
+</blockquote>
+<h2 id="一、-label-标签模拟单选、复选框"><a href="#一、-label-标签模拟单选、复选框" class="headerlink" title="一、 label 标签模拟单选、复选框"></a><strong>一、</strong> label 标签模拟单选、复选框</h2><p><strong>在uniapp中或者H5中,按钮的样式都是有限的,为了让按钮看起来更美观，提升用户体验，就不用 <code>input</code> 标签的单选、复选按钮，而是用 label 标签结合 for 属性来模拟。具体代码如下：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// HTML代码</span></span><br><span class="line">&lt;view <span class="class"><span class="keyword">class</span></span>=<span class="string">"test"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"checkbox"</span> id=<span class="string">"serach-moible"</span>&gt;</span><br><span class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"serach-moible"</span>&gt;苹果&lt;<span class="regexp">/label&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>view&gt;</span><br><span class="line"><span class="comment">// CSS 代码</span></span><br><span class="line">.test input&#123; <span class="attr">opacity</span>: <span class="number">0</span>; &#125;</span><br><span class="line">label&#123;</span><br><span class="line">   display: block;</span><br><span class="line">   font-size: <span class="number">14</span>px;</span><br><span class="line">   line-height: <span class="number">14</span>px;</span><br><span class="line">&#125;</span><br><span class="line">input[type=checkbox]+label::before&#123;</span><br><span class="line">   content: <span class="string">''</span>;</span><br><span class="line">   background: transparent;</span><br><span class="line">   border: 1px solid #000;</span><br><span class="line">   box-shadow: inset 0 0 0 2px #fff;</span><br><span class="line">   cursor: pointer;</span><br><span class="line">   display: inline-block;</span><br><span class="line">   width: <span class="number">12</span>px;</span><br><span class="line">   height: <span class="number">12</span>px;</span><br><span class="line">   margin-right: <span class="number">12</span>px;</span><br><span class="line">   position: relative;</span><br><span class="line">   top: <span class="number">2</span>px;</span><br><span class="line">&#125;</span><br><span class="line">input[type=checkbox]:checked+label::before&#123;</span><br><span class="line">   background: #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>当你点击 label 时，实际上就是选中了 input 单选按钮，为了这样，你必须要把 input 标签的 id 的值跟 label 标签的 for 属性值保持一致，这样就能通过操作 label 来操作按钮。</strong></p>
+<h2 id="二、图片懒加载"><a href="#二、图片懒加载" class="headerlink" title="二、图片懒加载"></a><strong>二、</strong>图片懒加载</h2><p><strong>图片懒加载这项技术可以延迟加载图像，只当图片出现在我们看到的视图中才加载，它的好处是大大提高用户体验，在uniapp中，图片懒加载已经帮我们处理好了，我们只要在<code>image</code>的属性上面加一个<code>lazyLoad</code>就能实现了，但是在正常的H5中，我们需要自己写图片懒加载的技术了</strong></p>
+<h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy-load"</span> <span class="attr">data-src</span>=<span class="string">"https://source.unsplash.com/random/600"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy-load"</span> <span class="attr">data-src</span>=<span class="string">"https://source.unsplash.com/random/700"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy-load"</span> <span class="attr">data-src</span>=<span class="string">"https://source.unsplash.com/random/800"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"lazy-load"</span> <span class="attr">data-src</span>=<span class="string">"https://source.unsplash.com/random/900"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入 lodash 库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/lodash.js/4.17.12-pre/lodash.core.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line">div &#123;</span><br><span class="line">  margin-top: 350px;</span><br><span class="line">&#125;</span><br><span class="line">.lazy-load &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 150px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!-- JS --&gt;</span></span><br><span class="line">let lazyImages = [...document.querySelectorAll('.lazy-load')]</span><br><span class="line">let inAdvance = 300</span><br><span class="line">function lazyLoad() &#123;</span><br><span class="line">    lazyImages.forEach(image =&gt; &#123;</span><br><span class="line">        <span class="comment">&lt;!-- 当图片的视口小于 Windows的偏移 + windows的屏幕高度就赋值  替换真实图片的  URL --&gt;</span></span><br><span class="line">        if (image.offsetTop <span class="tag">&lt; <span class="attr">window.innerHeight</span> + <span class="attr">window.pageYOffset</span> + <span class="attr">inAdvance</span>) &#123;</span></span><br><span class="line"><span class="tag">            <span class="attr">image.src</span> = <span class="string">image.dataset.src;</span>  </span></span><br><span class="line"><span class="tag">        &#125;</span></span><br><span class="line"><span class="tag">    &#125;)</span></span><br><span class="line"><span class="tag">&#125;</span></span><br><span class="line"><span class="tag"><span class="attr">lazyLoad</span>();</span></span><br><span class="line"><span class="tag"><span class="attr">window.addEventListener</span>('<span class="attr">scroll</span>', <span class="attr">_.throttle</span>(<span class="attr">lazyLoad</span>, <span class="attr">50</span>))</span></span><br><span class="line"><span class="tag"><span class="attr">window.addEventListener</span>('<span class="attr">resize</span>', <span class="attr">_.throttle</span>(<span class="attr">lazyLoad</span>, <span class="attr">50</span>))</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、常用正则表达式整理"><a href="#三、常用正则表达式整理" class="headerlink" title="三、常用正则表达式整理"></a><strong>三、</strong>常用正则表达式整理</h2><p><strong>很多编程语言都有正式，在项目中都会用到的正则表达式，匹配一系列匹配某个句法规则的字符串。经常使用的两个方法是 test() 和 match() 。</strong></p>
+<h3 id="以下是在网上收集上项目中常用的"><a href="#以下是在网上收集上项目中常用的" class="headerlink" title="以下是在网上收集上项目中常用的"></a>以下是在网上收集上项目中常用的</h3><p><strong>1.手机号码</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="number">13</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">14</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">15</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">166</span>|<span class="number">17</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">18</span>[<span class="number">0</span><span class="number">-9</span>]|<span class="number">19</span>[<span class="number">8</span>|<span class="number">9</span>])\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.电子邮件</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</span><br></pre></td></tr></table></figure></p>
+<p><strong>3.字母开头，允许5-16字节，允许字母数字下划线(一般用于账号)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[a-zA-Z][a-zA-Z0<span class="number">-9</span>_]&#123;<span class="number">4</span>,<span class="number">15</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[a-zA-Z]\w&#123;<span class="number">5</span>,<span class="number">17</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<p><strong>5.强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).&#123;<span class="number">8</span>,<span class="number">10</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<p><strong>6.国内电话号码，例如 021-87888822</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d&#123;<span class="number">3</span>&#125;-d&#123;<span class="number">8</span>&#125;|d&#123;<span class="number">4</span>&#125;-d&#123;<span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>7.腾讯QQ号</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">4</span>,&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>8.邮政编码</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span><span class="number">-9</span>]d&#123;<span class="number">5</span>&#125;(?!d)</span><br></pre></td></tr></table></figure></p>
+<p><strong>9.身份证号码(18位)</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^((\d&#123;<span class="number">18</span>&#125;)|([<span class="number">0</span><span class="number">-9</span>x]&#123;<span class="number">18</span>&#125;)|([<span class="number">0</span><span class="number">-9</span>X]&#123;<span class="number">18</span>&#125;))$</span><br></pre></td></tr></table></figure></p>
+<p><strong>10.日期格式</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^\d&#123;<span class="number">4</span>&#125;-\d&#123;<span class="number">1</span>,<span class="number">2</span>&#125;-\d&#123;<span class="number">1</span>,<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>11.IP地址</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((?:(?:<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]\\d|[<span class="number">01</span>]?\\d?\\d)\\.)&#123;<span class="number">3</span>&#125;(?:<span class="number">25</span>[<span class="number">0</span><span class="number">-5</span>]|<span class="number">2</span>[<span class="number">0</span><span class="number">-4</span>]\\d|[<span class="number">01</span>]?\\d?\\d))</span><br></pre></td></tr></table></figure></p>
+<p><strong>12.汉字</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[\u4e00-\u9fa5]&#123;<span class="number">0</span>,&#125;$</span><br></pre></td></tr></table></figure></p>
+<p><strong>13.域名</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a-zA-Z0<span class="number">-9</span>][-a-zA-Z0<span class="number">-9</span>]&#123;<span class="number">0</span>,<span class="number">62</span>&#125;(<span class="regexp">/.[a-zA-Z0-9][-a-zA-Z0-9]&#123;0,62&#125;)+/</span>.?</span><br></pre></td></tr></table></figure></p>
+<p><strong>14.url地址</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a-zA-z]+:<span class="comment">//[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>*常用的就是项目中用test 去匹配某个值之后返回 的布尔值</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test() 方法用于检测一个字符串是否匹配某个模式.输入参数为字符串，返回值为布尔值。用法如下</span><br></pre></td></tr></table></figure></p>
+<h2 id="四、uniapp开发的中的问题"><a href="#四、uniapp开发的中的问题" class="headerlink" title="四、uniapp开发的中的问题"></a><strong>四、</strong>uniapp开发的中的问题</h2><h3 id="1-class绑定问题"><a href="#1-class绑定问题" class="headerlink" title="1.class绑定问题"></a>1.class绑定问题</h3><blockquote>
+<p>官方文档已经很明确的说明非H5端不支持 Vue官方文档：Class 与 Style 绑定 中的 <code>classObject</code> 和 <code>styleObject</code> 语法。</p>
+</blockquote>
+<p>-不支持示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">:class</span>=<span class="string">"[activeClass]"</span> <span class="attr">:style</span>=<span class="string">"[baseStyles,overridingStyles]"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        data() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">                activeClass: &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">'active'</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">'text-danger'</span>: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                baseStyles: &#123;</span></span><br><span class="line"><span class="javascript">                    color: <span class="string">'green'</span>,</span></span><br><span class="line"><span class="javascript">                    fontSize: <span class="string">'30px'</span></span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                overridingStyles: &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="string">'font-weight'</span>: <span class="string">'bold'</span></span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 不过我在定义一个icon的组件的时候，有个数组绑定class的问题，自定义了一个icon的组件，部分代码如下</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 模拟器中这边的class 会是逗号隔开的，而不是中间是一个空格 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">:class</span>=<span class="string">"[name, icon]"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:style</span>=<span class="string">"&#123;'color': color, 'font-size': fontSize&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">        props: &#123;</span></span><br><span class="line"><span class="undefined">            name: &#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">default</span>: <span class="string">'iconfont'</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            icon: &#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="built_in">String</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            color: &#123;</span></span><br><span class="line"><span class="javascript">                type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="javascript">                <span class="keyword">default</span>: <span class="string">'#666666'</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            size: &#123;</span></span><br><span class="line"><span class="javascript">                type: [<span class="built_in">Number</span>, <span class="built_in">String</span>],</span></span><br><span class="line"><span class="javascript">                <span class="keyword">default</span>: <span class="number">30</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        computed: &#123;</span></span><br><span class="line"><span class="undefined">            cls()&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> <span class="subst">$&#123;<span class="keyword">this</span>.icon&#125;</span>`</span></span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined">            fontSize()&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> <span class="keyword">this</span>.size + <span class="string">'upx'</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>之后解决的帮忙就是利用计算属性</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">:class</span>=<span class="string">"cls"</span></span></span><br><span class="line"><span class="tag">   &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">computed: &#123;</span><br><span class="line">    cls()&#123;</span><br><span class="line">        return `$&#123;this.name&#125; $&#123;this.icon&#125;`</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-生命周期那些事"><a href="#2-生命周期那些事" class="headerlink" title="2.生命周期那些事"></a>2.生命周期那些事</h3><blockquote>
+<p>首先我们需要清楚uniapp中生命周期，应用生命周期，页面生命周期，还有组件生命周期：</p>
+</blockquote>
+<p><strong>应用生命周期是项目启动的过程，主要是在App.vue中声明的，包括下面几个：</strong></p>
+<p><img src="https://img2018.cnblogs.com/blog/1060535/201811/1060535-20181124095517830-1894523015.png" alt="markdown" title="markdown"></p>
+<ul>
+<li>在onLanch中我们可以获取启动参数,第三方APP传过来的参数，监听推送消息，设置屏幕锁定方向等等。</li>
+<li>页面的生命周期用onLoad代替created，onReady代替mounted。组件内使用created与mounted。ps：组件里面就没有onShow了</li>
+</ul>
+<h3 id="3-一些典型的问题"><a href="#3-一些典型的问题" class="headerlink" title="3.一些典型的问题"></a>3.一些典型的问题</h3><ul>
+<li><strong>出现遮罩后阻止页面滚动，可以在遮罩的touchmove事件中阻止默认事件。@touchmove.prevent=””。</strong></li>
+<li><strong>组件内引入图片要使用绝对路径（官方都推荐了）。/static/1.png</strong></li>
+<li><strong>z-index 覆盖不住要不就是层级不够，要不就是没加定位</strong></li>
+<li><strong>长按实践中@longTap 在APP端获取不到定位或者没效果和=可以推荐使用@longpress</strong></li>
+<li><strong>富文本解析中组件和api中有俩个方案，但经过使用发现u-parse是官方推荐的</strong></li>
+<li><strong>引入新的组件中需要重新重启才可更新编译</strong></li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>实践是检验效果的唯一标准，多动手多敲代码多实践，哪怕在简单的东西自己也要亲自去敲一遍才有所了解，有问题就找谷歌和百度。</strong></p>
+<!-- # 备注
+> 今天发现官方之后不支持非自定义组件模式了,需要升级到自定义组件模式
+![markdown](../images/1111.jpg "markdown") -->
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1izwf1KV0RbD_aZ3LA3u6ow" target="_blank" rel="noopener">https://pan.baidu.com/s/1izwf1KV0RbD_aZ3LA3u6ow</a>     qE4W</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/混合开发/" rel="tag"># 混合开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uniapp.html" rel="next" title="Uni-app的那些坑">
+                <i class="fa fa-chevron-left"></i> Uni-app的那些坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTYwMC8xODE0Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/daima.png" alt="LMQ">
+            
+              <p class="site-author-name" itemprop="name">LMQ</p>
+              <p class="site-description motion-element" itemprop="description">叩首问路,码梦为生❤</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-label-标签模拟单选、复选框"><span class="nav-number">1.1.</span> <span class="nav-text">一、 label 标签模拟单选、复选框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、图片懒加载"><span class="nav-number">1.2.</span> <span class="nav-text">二、图片懒加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下："><span class="nav-number">1.2.1.</span> <span class="nav-text">代码如下：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、常用正则表达式整理"><span class="nav-number">1.3.</span> <span class="nav-text">三、常用正则表达式整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是在网上收集上项目中常用的"><span class="nav-number">1.3.1.</span> <span class="nav-text">以下是在网上收集上项目中常用的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、uniapp开发的中的问题"><span class="nav-number">1.4.</span> <span class="nav-text">四、uniapp开发的中的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-class绑定问题"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.class绑定问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生命周期那些事"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.生命周期那些事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-一些典型的问题"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.一些典型的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LMQ</span>
+
+
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+  
+</span>
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count"> | 博客全站共7.4k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
